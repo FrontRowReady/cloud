@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Alerts</title>
+  </head>
+  <body>
+    <h1>Alerts</h1>
+    <div class="main_content">
+  	<% alerts.forEach(function(alert) { %>
+  		<div class="post_link">
+	  		<h2><%= alert.get("message") %></h2>
+  		</div>
+    <% }) %>
+	</div>
+
+  </body>
+</html>

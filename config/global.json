@@ -1,0 +1,14 @@
+{
+    "applications": {
+        "FRRDev": {
+            "applicationId": "wh49FDdYEQidqbY6NuwOt1AFNmobWhZUWDe3IOvC", 
+            "masterKey": "dtlPf8HCjJxFHRn84a8qBi2Q9nimiQkBBOziTxOo"
+        }, 
+        "_default": {
+            "link": "FRRDev"
+        }
+    }, 
+    "global": {
+        "parseVersion": "1.2.18"
+    }
+}

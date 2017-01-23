@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>New Inventory Request</title>
+	</head>
+	<body>
+	    <h1>New Inventory Request</h>
+
+	   	<form method="post" action="/createNewIRRequest">
+      		<p>
+        	<input type="number" placeholder="Year" name="year" /> <br>
+        	<input type="text" placeholder="Make" name="make" /> <br>
+        	<input type="text" placeholder="Model" name="model" /> <br>
+        	<input type="text" placeholder="Trim" name="trim" /> <br>
+        	<input type="text" placeholder="Color" name="color" /> <br>
+
+        	<input type="radio" name="timeframe" value="1">Buyer Waiting<br>
+			<input type="radio" name="timeframe" value="24">24 Hours<br>
+			<input type="radio" name="timeframe" value="">Any
+
+			<h3>Contacts</h3>
+
+			<div style="height:400px;width:400px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
+			    <% contacts.forEach(function(contact) { %>
+			    	<div class="inventory_response">
+			    		<input type="checkbox" name="contacts[]" value="<%=contact.id%>"><%= contact.get("firstName") + " " + contact.get("lastName") %></input>
+			    	</div>
+			    <% }) %>
+			</div>
+
+        	<input class="button" type="submit" value="Create">
+      		</p>
+    	</form>
+	<body>
+</html>

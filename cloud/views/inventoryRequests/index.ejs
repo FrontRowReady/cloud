@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Inventory Requests</title>
+  </head>
+  <body>
+  	<h1>Inventory Requests</h1>
+
+  	<h2>New Inventory Request</h2>
+
+    <form method="get" action="/newRequest">
+        <input class="button" type="submit" value="New Inventory Request" id="new_inventory_reqeust">
+    </form>
+
+  	<div class="inventory_requests">
+  	<% inventoryRequests.forEach(function(inventoryRequest) { %>
+  		<a href = "<%= '/inventoryRequests/' + inventoryRequest.id %>">
+	  		<div class="inventory_request">
+		  		<h3><%= inventoryRequest.get("model") %></h3>
+		  		<h4><%= inventoryRequest.get("make") %></h4>
+	  		</div>
+  		</a>
+    <% }) %>
+    </div>
+
+    <h1>Inventory Responses</h1>
+
+    <div class = "inventory_response">
+    <% inventoryResponses.forEach(function(inventoryResponse) { %>
+    	<div class="inventory_response">
+    		<h3><%= inventoryResponse.get("parentRequest").get("model") %></h3>
+    		<h4><%= inventoryResponse.get("parentRequest").get("make") %></h4>
+    	</div>
+    <% }) %>
+	</div>
+
+  </body>
+</html>
